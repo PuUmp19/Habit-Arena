@@ -1,0 +1,103 @@
+:root {
+  --bg: #12101F;
+  --panel: #1C1830;
+  --panel-2: #2A2347;
+  --brand: #3B2A7A;
+  --brand-light: #7B5CFF;
+  --text: #F2EFFF;
+  --muted: #9C95BD;
+  --salud: #FF5C7A;
+  --inteligencia: #4CC9F0;
+  --energia: #FFD23F;
+  --racha: #FF8A3D;
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--text); font-family: var(--font-body), system-ui, sans-serif; line-height: 1.5; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+.pixel { font-family: var(--font-pixel), monospace; line-height: 1.4; }
+.muted { color: var(--muted); font-size: .85rem; }
+.center { text-align: center; }
+:focus-visible { outline: 3px solid var(--brand-light); outline-offset: 2px; }
+
+/* Botones */
+.btn { display: inline-block; background: var(--brand-light); color: #fff; font-weight: 800; padding: .8rem 1.4rem; border-radius: 10px; border: 0; cursor: pointer; box-shadow: 0 4px 0 #4B35B8; text-align: center; font-size: 1rem; }
+.btn.ghost { background: transparent; box-shadow: none; border: 2px solid var(--panel-2); }
+.btn.full { display: block; width: 100%; margin-top: 1rem; }
+
+/* Ficha del jugador */
+.player { background: var(--panel); border: 2px solid var(--panel-2); border-radius: var(--radius); padding: 1.2rem; display: grid; gap: .9rem; }
+.player-head { display: flex; gap: .9rem; align-items: center; }
+.player-name { font-size: .8rem; }
+.avatar { width: 52px; height: 52px; display: grid; place-items: center; font-size: 1.8rem; background: var(--brand); border-radius: 12px; }
+.avatar.big { width: 84px; height: 84px; font-size: 3rem; margin: 0 auto .8rem; }
+.xp { height: 8px; background: var(--panel-2); border-radius: 99px; overflow: hidden; }
+.xp div { height: 100%; background: var(--brand-light); }
+.stat-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: .35rem; font-weight: 700; }
+.stat-top .pixel { font-size: .8rem; }
+.blocks { display: grid; grid-template-columns: repeat(10, 1fr); gap: 3px; }
+.blocks i { height: 14px; background: var(--panel-2); border-radius: 3px; }
+.blocks i.on { background: var(--c); }
+.streak { background: var(--panel-2); border-radius: 10px; padding: .6rem .9rem; color: var(--racha); font-weight: 700; }
+.streak .pixel { font-size: .9rem; }
+
+/* App Shell */
+.shell { max-width: 480px; margin: 0 auto; min-height: 100dvh; display: flex; flex-direction: column; }
+.app-header { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; padding: .8rem 1rem; background: var(--brand); }
+.logo-sm { font-size: .75rem; }
+.level-chip { font-size: .65rem; background: var(--bg); padding: .4rem .6rem; border-radius: 8px; color: var(--energia); }
+.shell-main { flex: 1; padding: 1rem 1rem 5.5rem; display: grid; gap: 1rem; align-content: start; }
+.bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; display: grid; grid-template-columns: repeat(4, 1fr); background: var(--panel); border-top: 2px solid var(--panel-2); padding-bottom: env(safe-area-inset-bottom); }
+.bottom-nav a { display: grid; justify-items: center; padding: .6rem 0; font-size: .72rem; color: var(--muted); font-weight: 700; }
+.bottom-nav a span { font-size: 1.3rem; }
+.bottom-nav a.active { color: var(--text); background: var(--panel-2); }
+
+/* Listas y tarjetas */
+.section-title { font-size: 1rem; display: flex; justify-content: space-between; align-items: baseline; }
+.list { display: grid; gap: .6rem; }
+.card { background: var(--panel); border: 2px solid var(--panel-2); border-radius: var(--radius); padding: 1.1rem; display: grid; gap: .9rem; }
+.habit { display: flex; align-items: center; gap: .8rem; background: var(--panel); border: 2px solid var(--panel-2); border-radius: var(--radius); padding: .8rem; }
+.habit-icon { font-size: 1.5rem; }
+.habit-info { flex: 1; font-weight: 700; }
+.habit.done { border-color: #2E7D5B; }
+.habit.done .habit-info > p:first-child { text-decoration: line-through; color: var(--muted); }
+.check { width: 36px; height: 36px; border-radius: 10px; border: 2px solid var(--muted); background: transparent; color: #fff; font-weight: 900; cursor: pointer; }
+.habit.done .check { background: #2E7D5B; border-color: #2E7D5B; }
+.week { display: flex; justify-content: space-between; align-items: end; height: 100px; }
+.week div { display: grid; justify-items: center; gap: .3rem; font-size: .75rem; color: var(--muted); }
+.week i { width: 22px; background: var(--brand-light); border-radius: 4px 4px 0 0; }
+
+/* Landing */
+.landing { max-width: 960px; margin: 0 auto; padding: 1rem; display: grid; gap: 3rem; }
+.landing-nav { display: flex; justify-content: space-between; align-items: center; }
+.hero { display: grid; gap: 2rem; align-items: center; padding-top: 1rem; }
+.hero h1 { font-size: 1.4rem; margin-bottom: 1rem; }
+.lead { color: var(--muted); margin-bottom: 1.5rem; max-width: 46ch; }
+.features { display: grid; gap: 1rem; }
+.features article { background: var(--panel); border-radius: var(--radius); padding: 1.2rem; }
+.features span { font-size: 1.6rem; }
+.features h3 { margin: .4rem 0 .2rem; }
+.features p { color: var(--muted); }
+.plans h2 { font-size: 1rem; margin-bottom: 1rem; }
+.plans-grid { display: grid; gap: 1rem; }
+.plan { background: var(--panel); border: 2px solid var(--panel-2); border-radius: var(--radius); padding: 1.3rem; }
+.plan.hl { border-color: var(--brand-light); }
+.price { font-size: .9rem; margin: .5rem 0 .8rem; color: var(--energia); }
+.plan li::before { content: "✓ "; color: var(--brand-light); }
+footer { text-align: center; padding-bottom: 1rem; }
+
+/* Login / Registro */
+.auth { max-width: 380px; margin: 0 auto; min-height: 100dvh; display: grid; align-content: center; gap: 1.2rem; padding: 1.5rem; text-align: center; }
+.auth h1 { font-size: 1rem; }
+.form { display: grid; gap: .9rem; text-align: left; }
+.form label { display: grid; gap: .3rem; font-weight: 700; font-size: .9rem; }
+.form input { padding: .8rem; border-radius: 10px; border: 2px solid var(--panel-2); background: var(--panel); color: var(--text); font: inherit; }
+.auth a:not(.btn) { color: var(--brand-light); font-weight: 700; }
+
+@media (min-width: 720px) {
+  .hero { grid-template-columns: 1.1fr 1fr; }
+  .hero h1 { font-size: 1.9rem; }
+  .features { grid-template-columns: repeat(3, 1fr); }
+  .plans-grid { grid-template-columns: repeat(2, 1fr); }
+}

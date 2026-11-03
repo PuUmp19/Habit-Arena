@@ -1,0 +1,4 @@
+Coloca aquí los íconos de la app:
+icon-192x192.png
+icon-512x512.png
+icon-maskable-512x512.png
